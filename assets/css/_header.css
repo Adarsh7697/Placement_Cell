@@ -1,0 +1,27 @@
+.custom-bg {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.74), rgba(173, 237, 253, 0.63));
+    opacity: 0.6; }
+  
+  .header-container {
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-weight: bolder; }
+  
+  .btn {
+    border-radius: 20px;
+    color: aquamarine; }
+  
+  .logo-container {
+    display: flex;
+    align-items: center; }
+  
+  .logo {
+    margin-right: 5px;
+    margin-bottom: 8px; }
+  
+  .logo-text {
+    font-size: 18px;
+    font-weight: bold; }

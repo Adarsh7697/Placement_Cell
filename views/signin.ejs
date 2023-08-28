@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/signin.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="/images/icon.png" type="image/png" />
+    <title>login</title>
+  </head>
+  <body style="background-image: url('/images/main.jpg'); background-size: cover; width: 30%; margin: 100px auto;" >
+    
+    <div class="signin-container" 
+      onmouseover="this.style.boxShadow = '0 2px 4px rgb(4, 25, 20)';"
+      onmouseout="this.style.boxShadow = 'none';">
+
+      <div class="mx-auto mt-3 mb-3 text-container" style="width: 200px">
+        <h1>SIGNIN</h1>
+      </div>
+
+      <form class="form-container" action="/create-session" method="POST">
+        <div class="mb-3">
+          <label for="input-email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="input-email"
+            placeholder="name@example.com"
+            name="email"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="input-password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="input-password"
+            name="password"
+          />
+        </div>
+
+        <div style="display: flex; justify-content: center">
+          <button type="submit" class="sub-btn" style="margin-left: 30px;">LOGIN</button>
+        </div>
+      </form>
+
+      <div class="signin-footer-container" style="width: 300px">
+        <h5 style="display: inline; color: white;">Register Now&nbsp;</h5>
+        <a href="/sign-up" style="color: blue;">SIGN_UP</a>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

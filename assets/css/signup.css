@@ -1,0 +1,91 @@
+.list-cont {
+    display: flex;
+    padding-top: 50px; }
+  
+  .stu-list-cont {
+    display: flex;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.74), rgba(173, 237, 253, 0.63));
+    border-radius: 40px;
+    box-shadow: 0 2px 4px rgba(132, 214, 173, 0.705); }
+  
+  .downbtn {
+    width: 90%; }
+  
+  .downbtn .accordion-button {
+    border-radius: 20px;
+    opacity: 0.5;
+    margin-bottom: 20px; }
+  
+  .stu-list-data {
+    border: 1px black;
+    font-weight: bold;
+    border-radius: 10px; }
+  
+  .sub-btn1 {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #37958a, aquamarine);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+  
+  .sub-btn1:hover {
+    transform: scale(1.1);
+    color: #7272c5; }
+  
+  .sub-btn2 {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #37958a, aquamarine);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+  
+  .sub-btn2:hover {
+    transform: scale(1.1);
+    color: #db7e7e; }
+  
+  .email-ipt {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    opacity: 0.6; }
+  
+  .email-ipt:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+  
+  .result-dwn {
+    display: flex;
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    opacity: 0.6; }
+  
+  .result-dwn:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }

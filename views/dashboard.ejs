@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+    />
+    
+    <link rel="icon" href="/images/icon.png" type="image/png" />
+    <title>Dashboard</title>
+  </head>
+
+  <body style="background-image: url('/images/pcellmain.jpg'); background-size: cover;">
+    <!-- PARTIAL FOR HEADER -->
+    <%- include('_header') %> <% if(locals.user) {%>
+    <div class="list-cont">
+      <!-- Student list section -->
+      <div
+        class="flex-column align-items-center p-2 mx-auto my-2 container-sm stu-list-cont"
+        style="
+          max-width: 600px;
+          min-height: 200px;
+          max-height: 600px;
+          overflow-y: auto;
+        "
+        onmouseover="this.style.boxShadow = '0 2px 4px rgb(4, 25, 20)';"
+        onmouseout="this.style.boxShadow = 'none';"
+      >
+        <h3 class="mt-2">Students list</h3>
+        <div class="downbtn" style="width: 90%">
+          <% for (student of all_students) {%>
+          <div>
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse<%= student._id %>"
+                aria-expanded="false"
+                aria-controls="collapse<%= student._id %>"
+              >
+                <span class="fw-semibold text-capitalize"
+                  ><%= student.name %></span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapse<%= student._id %>"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body d-flex flex-column stu-list-data">
+                <table class="table table-striped table-bordered table-hover table-responsive">
+                  <tbody>
+                    <tr>
+                      <td>Name</td>
+                      <td><%= student.name %></td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td><%= student.email %></td>
+                    </tr>
+                    <tr>
+                      <td>College</td>
+                      <td><%= student.college %></td>
+                    </tr>
+                    <tr>
+                      <td>Batch</td>
+                      <td><%= student.batch %></td>
+                    </tr>
+                    <tr>
+                      <td>Status</td>
+                      <td><%= student.placementStatus %></td>
+                    </tr>
+                    <tr>
+                      <td>DSA score</td>
+                      <td><%= student.dsa_score %></td>
+                    </tr>
+                    <tr>
+                      <td>Web development score</td>
+                      <td><%= student.webdev_score %></td>
+                    </tr>
+                    <tr>
+                      <td>React score</td>
+                      <td><%= student.react_score %></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="d-flex justify-content-around" style="width: 100%">
+                  <a
+                    href="/student/edit-student/<%= student.id %>"
+                    class="sub-btn1"
+                    style="width: 40%; text-decoration: none;"
+                  >
+                    Edit
+                  </a>
+                  <a
+                    href="/student/destroy/<%= student.id %>"
+                    class="sub-btn2"
+                    style="width: 40%; text-decoration: none;"
+                  >
+                    Delete
+                  </a>
+                </div>
+
+                <div
+                  class="mt-3 d-flex border-top flex-column align-items-center"
+                  style="width: 100%"
+                >
+                  <h3 class="mt-2">Interviews</h3>
+
+                  <table class="table table-striped table-bordered table-hover table-responsive" style="width: 100%">
+                    <thead>
+                      <tr>
+                        <th scope="col">Company</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Result</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for(interview of student.interviews) {%>
+                      <tr class="text-capitalize">
+                        <td><%= interview.company %></td>
+                        <td><%= interview.date %></td>
+                        <td><%= interview.result %></td>
+                      </tr>
+                      <%} %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%} %>
+        </div>
+      </div>
+      <!-- Interviews section -->
+      <div
+        class="d-flex flex-column align-items-center p-2 mx-auto my-2 container-sm stu-list-cont"
+        style="
+          max-width: 600px;
+          min-height: 200px;
+          max-height: 600px;
+          overflow-y: auto;
+        "
+        onmouseover="this.style.boxShadow = '0 2px 4px rgb(4, 25, 20)';"
+        onmouseout="this.style.boxShadow = 'none';"
+      >
+        <h3 class="mt-2">Scheduled Interviews</h3>
+        <div class="downbtn" style="width: 90%">
+          <% for (interview of all_interviews) {%>
+          <div>
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse<%= interview._id %>"
+                aria-expanded="false"
+                aria-controls="collapse<%= interview._id %>"
+              >
+                <span class="fw-semibold font-seigeUi text-uppercase"
+                  ><%= interview.company %></span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapse<%= interview._id %>"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body d-flex flex-column align-items-center">
+                <table class="table table-striped table-bordered table-hover table-responsive">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Company</th>
+                      <td><%= interview.company %></td>
+                    </tr>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <td><%= interview.date %></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div
+                  class="d-flex flex-column align-items-center"
+                  style="width: 100%"
+                >
+                  <h5>Enrolled students</h5>
+
+                  <% for (i of interview.students) {%>
+
+                  <div
+                    class="border border-secondry rounded mb-2"
+                    style="width: 100%"
+                  >
+                    <table class="table table-striped table-bordered table-hover table-responsive">
+                      <tbody>
+                        <tr>
+                          <td>Name</td>
+                          <td><%= i.name %></td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td><%= i.email %></td>
+                        </tr>
+                        <tr>
+                          <td>Result</td>
+                          <td><%= i.result %></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <a
+                      href="/interview/deallocate/<%= i.id %>/<%= interview.id %>"
+                      class="sub-btn2"
+                      style="width: 40%"
+                      >Delete</a
+                    >
+                  </div>
+
+                  <%} %>
+                </div>
+
+                <div
+                  class="d-flex flex-column align-items-center border rounded p-2 m-2 shadow-sm"
+                  style="width: 100%"
+                >
+                  <h5 class="mt-2">Add student</h5>
+                  <form
+                    class="container-fluid"
+                    action="/interview/enroll-in-interview/<%= interview.id %>"
+                    method="POST"
+                  >
+                    <div class="mb-3">
+                      <label for="student_email" class=""
+                        >Student email</label
+                      >
+                      <input
+                        type="email"
+                        class="email-ipt"
+                        id="student_email"
+                        aria-describedby="emailHelp"
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="result" class="form-label">Result</label>
+                      <select
+                        id="result"
+                        class="result-dwn"
+                        name="result"
+                        required
+                      >
+                        <option class="result-dwn" selected>PASS</option>
+                        <option class="result-dwn">FAIL</option>
+                        <option class="result-dwn">On Hold</option>
+                        <option class="result-dwn">Didn't attempt</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="sub-btn1">
+                      &nbsp; Add &nbsp;
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%} %>
+        </div>
+      </div>
+    </div>
+    <%} %>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

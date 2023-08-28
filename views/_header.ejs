@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/_header.css">
+
+<header>
+    <nav class="navbar navbar-dark custom-bg">
+        <div class="container-fluid header-container">
+            <a href="/" class="navbar-brand logo-container">
+                <img src="/images/header.png" width="30px" alt="logo" class="logo">
+                <span class="logo-text">PLACEMENT CELL</span>
+            </a>
+            <% if(locals.user) { %> 
+                <a href="/profile" class="navbar-brand">HELLO
+                    <%= locals.username %>
+                </a>    
+            <% } %>
+
+                <form class="d-flex">
+                    <a class="navbar-brand" href="/dashboard">Dashboard</a>
+                    <a class="navbar-brand" href="/student/add-student">Add new Student</a>
+                    <a class="navbar-brand" href="/interview/add-interview">Add Interview</a>
+                    <a class="navbar-brand" href="/download">Report</a>
+                    <a class="navbar-brand" href="/sign-out">Sign Out</a>
+                </form>
+
+        </div>
+    </nav>
+</header>

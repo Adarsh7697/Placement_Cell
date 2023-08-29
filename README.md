@@ -17,11 +17,12 @@ A Node.js web app to manage students and their placements and download interview
 
 ## MongoDb Atlas
 
-1. Open a terminal or command prompt and navigate to the project's main directory
-2. Run the command npm install to install the project dependencies.
-3. Run the command npm start to start the project.
-4. The app will now be running on port 8000.
-5. Open the web browser and visit on http://localhost:8000 to access the web application.
+1. Visit on https://www.mongodb.com/
+2. Sign up on MongoDB Atlas
+3. Then in Data Services Choose Connect option
+4. Then click on Drivers
+5. Then page is open at below link Add your connection string into your application code
+
 
 ## Starting the App
 
